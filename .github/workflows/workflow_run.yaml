@@ -9,12 +9,13 @@ on:
         - pizza
         types:
         - completed
+    
+    workflow_dispatch:
 
 jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - name: Dump GitHub context
-              env:
-                GITHUB_CONTEXT: ${{ toJson(github) }}
-              run: echo "$GITHUB_CONTEXT"
+            - run: echo ${{ github.event.workflow_run.head_branch }}
+            - run: echo "Hi from pizza"
+              if: ${{ github.event.workflow_run.head_branch }} == "pizza"
