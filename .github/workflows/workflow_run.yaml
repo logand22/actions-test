@@ -18,4 +18,4 @@ jobs:
         steps:
             - run: echo ${{ github.event.workflow_run.head_branch }}
             - run: echo "Hi from pizza"
-              if: ${{ github.event.workflow_run.head_branch }} == "pizza"
+              if: ${{ github.event.workflow_run.head_branch == 'pizza' }}
