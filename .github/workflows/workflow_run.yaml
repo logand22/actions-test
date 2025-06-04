@@ -1,0 +1,16 @@
+name: Second Workflow
+
+on:
+    workflow_run:
+        workflows:
+        - 'First Workflow'
+        branches:
+        - main
+        types:
+        - completed
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - run: "echo ${{ github.event_name }}"
