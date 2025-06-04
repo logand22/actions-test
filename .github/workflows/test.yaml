@@ -12,3 +12,5 @@ jobs:
           env:
             GITHUB_CONTEXT: ${{ toJson(github) }}
           run: echo "$GITHUB_CONTEXT"
+        - if: ${{ github.event.workflow_run.conclusion == 'success' }}
+          run: "YAY"
