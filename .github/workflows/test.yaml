@@ -2,7 +2,7 @@ name: First Workflow
 
 on:
   push:
-    branches: ['main']
+    branches: ['pizza']
 
 jobs:
     test:

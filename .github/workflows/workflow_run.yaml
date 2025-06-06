@@ -5,7 +5,6 @@ on:
         workflows:
         - 'First Workflow'
         branches:
-        - main
         - pizza
         types:
         - completed
